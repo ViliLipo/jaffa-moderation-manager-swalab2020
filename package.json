@@ -1,0 +1,28 @@
+{
+  "name": "jaffa-moderation-manager-swalab2020",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vili Lipo <vili.lipo@helsinki.fi>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "watch": "NODE_ENV=development node_modules/.bin/nodemon index.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "body-parser": "^1.19.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "sequelize": "^5.21.4",
+    "sqlite3": "^4.1.1",
+    "tern": "^0.24.3"
+  }
+}
