@@ -11,16 +11,20 @@ Mute.init({
     allowNull: false,
   },
   post: {
-    type: Sequelize.Integer,
+    type: Sequelize.INTEGER,
   },
   global: {
-    type: Sequelize.bool,
+    type: Sequelize.BOOLEAN,
     defaultValue: false,
   },
 }, {
   sequelize: database,
-  modelName: 'mute',
+  modelName: 'mutes',
 });
 
+Mute.sync({ force: true })
+  .then(() => {
+    Mute.create({ user: 'Dude', global: true });
+  });
 
 module.exports = Mute;

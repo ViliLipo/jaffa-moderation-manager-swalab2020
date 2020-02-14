@@ -2,11 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const moderationRouter = require('./controllers/moderation.js');
 const { mqSend, registerReceiver } = require('./interservice/machinequeue.js');
+const moderationEventReceiver = require('./interservice/moderationEventReceiver.js');
 const database = require('./models/database.js');
 
 const moderationEventQueue = 'moderation_event_queue';
 
-
+registerReceiver(moderationEventQueue, moderationEventReceiver);
 const app = express();
 app.use(bodyParser.json());
 app.use('/api/moderation', moderationRouter);
