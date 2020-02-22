@@ -24,7 +24,7 @@ Mute.init({
 
 Mute.sync({ force: true })
   .then(() => {
-    Mute.create({ user: 'Dude', global: true });
+    Mute.create({ user: 'Mutedman', global: true });
   });
 
 module.exports = Mute;
