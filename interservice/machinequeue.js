@@ -3,7 +3,6 @@ const amqp = require('amqplib');
 const mqSend = async (message, queue, correlationId) => {
   const connection = await amqp.connect('amqp://localhost');
   const channel = await connection.createChannel();
-  // const ok = await channel.assertQueue(queue, { durable: false });
   await channel.sendToQueue(queue, Buffer.from(message), { correlationId });
   console.log(`sent ${message} to queue ${queue}`);
   await channel.close();
